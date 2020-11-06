@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{91979AB2-0E28-4AE5-8789-EE5165198F7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "model", "model\model.csproj", "{91979AB2-0E28-4AE5-8789-EE5165198F7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usecase", "usecase\usecase.csproj", "{4BD0214A-D413-49C0-919A-88CD12CEA2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "usecase", "usecase\usecase.csproj", "{4BD0214A-D413-49C0-919A-88CD12CEA2EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datasource", "datasource\datasource.csproj", "{172CDAC6-9933-42C3-8E38-C93C58BD147F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "datasource", "datasource\datasource.csproj", "{172CDAC6-9933-42C3-8E38-C93C58BD147F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "persenter", "persenter\persenter.csproj", "{D4EE8545-190C-4A93-AAFE-FC34390116D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{172CDAC6-9933-42C3-8E38-C93C58BD147F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172CDAC6-9933-42C3-8E38-C93C58BD147F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172CDAC6-9933-42C3-8E38-C93C58BD147F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EE8545-190C-4A93-AAFE-FC34390116D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EE8545-190C-4A93-AAFE-FC34390116D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EE8545-190C-4A93-AAFE-FC34390116D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EE8545-190C-4A93-AAFE-FC34390116D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
