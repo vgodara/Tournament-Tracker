@@ -20,5 +20,6 @@
 		<Folder Include="matchUpEntry\" />
 		<Folder Include="matchUp\" />
 		<Folder Include="round\" />
+		<Folder Include="tournament\" />
 	</ItemGroup>
 </Project>
