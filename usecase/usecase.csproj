@@ -17,5 +17,6 @@
 		<Folder Include="person\" />
 		<Folder Include="team\" />
 		<Folder Include="prize\" />
+		<Folder Include="matchUpEntry\" />
 	</ItemGroup>
 </Project>
