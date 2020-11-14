@@ -8,4 +8,8 @@
     <ProjectReference Include="..\usecase\usecase.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Folder Include="repository\" />
+	</ItemGroup>
+	
 </Project>
