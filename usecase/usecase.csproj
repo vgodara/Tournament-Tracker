@@ -15,5 +15,6 @@
 	<ItemGroup>
 		<Folder Include="common\" />
 		<Folder Include="person\" />
+		<Folder Include="team\" />
 	</ItemGroup>
 </Project>
