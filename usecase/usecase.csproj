@@ -16,5 +16,6 @@
 		<Folder Include="common\" />
 		<Folder Include="person\" />
 		<Folder Include="team\" />
+		<Folder Include="prize\" />
 	</ItemGroup>
 </Project>
