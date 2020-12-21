@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SQLDataBase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{aeff88cc-f62e-498a-af55-7b17292f1972}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SQLDataBase</RootNamespace>
+    <AssemblyName>SQLDataBase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Store Procedures" />
+    <Folder Include="Store Procedures\MatchUpEntries" />
+    <Folder Include="Store Procedures\MatchUps" />
+    <Folder Include="Store Procedures\People" />
+    <Folder Include="Store Procedures\Prizes" />
+    <Folder Include="Store Procedures\Rounds" />
+    <Folder Include="Store Procedures\Teams" />
+    <Folder Include="Store Procedures\TournamentEntries" />
+    <Folder Include="Store Procedures\Tournaments" />
+    <Folder Include="Table" />
+    <Folder Include="Type" />
+    <Folder Include="Function" />
+    <Folder Include="Store Procedures\TournamentPrizes" />
+    <Folder Include="Store Procedures\TeamMembers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Store Procedures\People\spPeople_GetAllPersons.sql" />
+    <Build Include="Store Procedures\People\spPeople_GetPersonById.sql" />
+    <Build Include="Store Procedures\People\spPeople_SavePerson.sql" />
+    <Build Include="Store Procedures\Prizes\spPrizes_GetAllPrizes.sql" />
+    <Build Include="Store Procedures\Prizes\spPrizes_GetPrizeById.sql" />
+    <Build Include="Store Procedures\Prizes\spPrizes_SavePrize.sql" />
+    <Build Include="Store Procedures\Teams\spTeams_GetAllTeams.sql" />
+    <Build Include="Store Procedures\Teams\spTeams_GetTeamById.sql" />
+    <Build Include="Store Procedures\Teams\spTeams_SaveTeam.sql" />
+    <Build Include="Table\MatchUpEntries.sql" />
+    <Build Include="Table\MatchUps.sql" />
+    <Build Include="Table\People.sql" />
+    <Build Include="Table\Prizes.sql" />
+    <Build Include="Table\Rounds.sql" />
+    <Build Include="Table\TeamMembers.sql" />
+    <Build Include="Table\Teams.sql" />
+    <Build Include="Table\TournamentEntries.sql" />
+    <Build Include="Table\TournamentPrizes.sql" />
+    <Build Include="Table\Tournaments.sql" />
+    <Build Include="Store Procedures\MatchUpEntries\spMatchUpEntries_SaveMatchUpEntries.sql" />
+    <Build Include="Store Procedures\MatchUps\spMatchUps_SaveMatchUps.sql" />
+    <Build Include="Store Procedures\Rounds\spRounds_SaveRounds.sql" />
+    <Build Include="Store Procedures\TournamentEntries\spTournamentEntries_SaveTournamentEntries.sql" />
+    <Build Include="Store Procedures\TeamMembers\spTeamMember_saveTeamMembers.sql" />
+    <Build Include="Store Procedures\MatchUpEntries\spMatchUpEntries_SaveMatchUpEntry.sql" />
+    <Build Include="Store Procedures\MatchUps\spMatchUps_SaveMatchUp.sql" />
+    <Build Include="Store Procedures\Rounds\spRounds_SaveRound.sql" />
+    <Build Include="Store Procedures\TeamMembers\spTeamMember_saveTeamMember.sql" />
+    <Build Include="Store Procedures\TournamentEntries\spTournamentEntries_SaveTournamentEntry.sql" />
+    <Build Include="Store Procedures\TournamentPrizes\spTournamentPrizes_SaveTournamentPrize.sql" />
+    <Build Include="Store Procedures\TournamentPrizes\spTournamentPrizes_SaveTournamentPrizes.sql" />
+    <Build Include="Store Procedures\Tournaments\spTournaments_SaveTournament.sql" />
+    <Build Include="Store Procedures\Tournaments\spTournaments_SaveTournaments.sql" />
+    <Build Include="Store Procedures\MatchUpEntries\spMatchUpEntries_GetMatchUpEntryById.sql" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+﻿CREATE TABLE People
+(
+    Id INT NOT NULL PRIMARY KEY IDENTITY, 
+    FirstName NVARCHAR(50) NOT NULL, 
+    LastName NVARCHAR(50) NULL , 
+    EmailAddress NVARCHAR(200) NOT NULL, 
+    CellPhoneNumber VARCHAR(50) NOT NULL 
+)
