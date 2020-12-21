@@ -1,35 +1,18 @@
-﻿using System;
+﻿using model;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using LanguageExt;
-using static LanguageExt.Prelude;
-using model;
 
 namespace usecase.common
 {
-    class Response<T>  {
-
-        public readonly int respCode;
-        public readonly string respMessage;
-        public readonly Either<Exception, T> response;
-
-        public Response(int respCode,
-                         string respMessage,
-                         T model)
+    class Response<T> : BaseResponse<T> where T : BaseModel
+    {
+        public Response(int respCode, string respMessage, T model) : base(respCode, respMessage, model)
         {
-            this.respCode = respCode;
-            this.respMessage = respMessage;
-            this.response = Right<Exception, T>(model);
-
         }
 
-        public Response(int respCode,
-                        string respMessage,
-                        Exception exception)
+        public Response(int respCode, string respMessage, Exception exception) : base(respCode, respMessage, exception)
         {
-            this.respCode = respCode;
-            this.respMessage = respMessage;
-            this.response = Left<Exception, T>(exception);
         }
     }
 }

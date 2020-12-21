@@ -14,11 +14,11 @@ namespace usecase.common
         }
         protected abstract Model BuildUseCase(Request request);
 
-        public async Task<Response<Model>> GetAsync(Request request)
+        public async Task<BaseResponse<Model>> GetAsync(Request request)
         {
             try
             {
-                Response<Model> response = await Task.Run<Response<Model>>(() =>
+                BaseResponse<Model> response = await Task.Run<BaseResponse<Model>>(() =>
                 {
                     cancellationToken.ThrowIfCancellationRequested();
                     Model model = BuildUseCase(request);
@@ -27,14 +27,14 @@ namespace usecase.common
                         throw new ArgumentNullException(nameof(Model));
                     }
                     else
-                        return new Response<Model>(200, $"operation was successful", model);
+                        return new BaseResponse<Model>(200, $"operation was successful", model);
                 }, cancellationToken);
                 cancellationToken.ThrowIfCancellationRequested();
                 return response;
             }
             catch (Exception exception)
             {
-                return new Response<Model>(exception.InnerException.HResult, exception.Message, exception);
+                return new BaseResponse<Model>(exception.InnerException.HResult, exception.Message, exception);
             }
 
 
