@@ -19,7 +19,7 @@ namespace model
         /// <summary>
         /// Total amount of prize for this particular tournament
         /// </summary>
-        public PrizeModel Prize { get; }
+        public List<PrizeModel> Prizes { get; }
         /// <summary>
         /// List of rounds to held for this particular tournament
         /// </summary>
@@ -28,28 +28,28 @@ namespace model
         public TournamentModel ( string tournamentName,
                                 decimal entryFee,
                                 List<TeamModel> enteredTeams,
-                                PrizeModel prize,
+                                List<PrizeModel> prizes,
                                 List<RoundModel> rounds ) : base ()
         {
 
             TournamentName = tournamentName;
             EnteryFee = entryFee;
             EnteredTeams = enteredTeams;
-            Prize = prize;
+            Prizes = prizes;
             Rounds = rounds;
         }
         public TournamentModel ( int id,
                                 string tournamentName,
                                 decimal entryFee,
                                 List<TeamModel> enteredTeams,
-                                PrizeModel prize,
+                                List<PrizeModel> prizes,
                                 List<RoundModel> rounds ) : base (id)
         {
 
             TournamentName = tournamentName;
             EnteryFee = entryFee;
             EnteredTeams = enteredTeams;
-            Prize = prize;
+            Prizes = prizes;
             Rounds = rounds;
         }
     }

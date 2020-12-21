@@ -7,7 +7,7 @@ namespace model
         /// <summary>
         /// Represents the list of people for this particular team
         /// </summary>
-        public List<PersonModel> TeamMember { get; }
+        public List<PersonModel> TeamMembers { get; }
         /// <summary>
         /// Represents the official name of the team 
         /// </summary>
@@ -17,7 +17,7 @@ namespace model
                           string teamName ) : base()
         {
 
-            TeamMember = teamMember;
+            TeamMembers = teamMember;
             TeamName = teamName;
         }
 
@@ -26,7 +26,7 @@ namespace model
                           string teamName ) : base (id)
         {
 
-            TeamMember = teamMember;
+            TeamMembers = teamMember;
             TeamName = teamName;
         }
     }
