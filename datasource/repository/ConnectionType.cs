@@ -6,7 +6,6 @@ namespace datasource.repository
 {
    public enum ConnectionType
     {
-        SQL,
-        LOCAL
+        SQL
     }
 }

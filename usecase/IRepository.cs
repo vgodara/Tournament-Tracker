@@ -6,35 +6,42 @@ namespace usecase
    public  interface IRepository
     {
         Lst<PersonModel> GetAllPersons();
-        PersonModel GetPerson(int id);
-        PersonModel SavePerson(PersonModel person);
+        Lst<PersonModel> GetAllPersonInTeam(int teamId);
+        Lst<PersonModel> GetPersons(Lst<int> ids);
+        Lst<PersonModel> SavePersons(Lst<PersonModel> persons);
 
 
         Lst<TeamModel> GetAllTeams();
-        TeamModel GetTeam(int id);
-        TeamModel SaveTeam(TeamModel team);
+        Lst<TeamModel> GetAllTeamEntredInTournament(int tournamentId);
+        Lst<TeamModel> GetTeams(Lst<int> ids);
+        Lst<TeamModel> SaveTeams(Lst<TeamModel> teams);
 
 
         Lst<PrizeModel> GetAllPrizes();
-        PrizeModel GetPrize(int id);
-        PrizeModel SavePrize(PrizeModel prize);
+        Lst<PrizeModel> GetAllPrizeInTournament(int tournamentId);
+        Lst<PrizeModel> GetPrizes(Lst<int> ids);
+        Lst<PrizeModel> SavePrizes(Lst<PrizeModel> prizes);
+        Lst<PrizeModel> AssociatePrizeWithTournament(int tournamentId, Lst<int> prizeIds);
 
         Lst<MatchUpEntryModel> GetAllMatchUpEntries();
-        MatchUpEntryModel GetMatchUpEntry(int id);
-        MatchUpEntryModel SaveMatchUpEntry(MatchUpEntryModel matchUpEntry);
+        Lst<MatchUpEntryModel> GetMatchUpEntriesInMatchUp(int matchupId);
+        Lst<MatchUpEntryModel> GetMatchUpEntries(Lst<int> ids);
+        Lst<MatchUpEntryModel> SaveMatchUpEntries(int matchUpId, Lst<MatchUpEntryModel> matchUpEntries);
 
 
         Lst<MatchUpModel> GetAllMatchUps();
-        MatchUpModel GetMatchUp(int id);
-        MatchUpModel SaveMatchUp(MatchUpModel matchUp);
+        Lst<MatchUpModel> GetMatchUpsInRound(int roundId);
+        Lst<MatchUpModel> GetMatchUps(Lst<int> ids);
+        Lst<MatchUpModel> SaveMatchUps(int roundId, Lst<MatchUpModel> matchUps);
 
         Lst<RoundModel> GetAllRounds();
-        RoundModel GetRound(int id);
-        RoundModel SaveRound(RoundModel round);
+        Lst<RoundModel> GetRoundsInTournamnet(int tournamentId);
+        Lst<RoundModel> GetRounds(Lst<int> ids);
+        Lst<RoundModel> SaveRounds(int tournamentId, Lst<RoundModel> rounds);
 
 
         Lst<TournamentModel> GetAllTournaments();
-        TournamentModel GetTournament(int id);
-        TournamentModel SaveTournament(TournamentModel tournament);
+        Lst<TournamentModel> GetTournaments(Lst<int> ids);
+        Lst<TournamentModel> SaveTournaments(Lst<TournamentModel> tournaments);
     }
 }

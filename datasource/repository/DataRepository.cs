@@ -7,7 +7,7 @@ namespace datasource.repository
 {
    public class DataRepository : IRepository
     {
-        private readonly ILocalRepository localRepository;
+   
         private readonly IRemoteRepositry remoteRepositry;
         private readonly ConnectionType connectionType;
 
@@ -19,10 +19,6 @@ namespace datasource.repository
                 case ConnectionType.SQL:
                     {
                         return remoteRepositry;
-                    }
-                case ConnectionType.LOCAL: 
-                    {
-                        return localRepository;
                     }
                 default: 
                     {
@@ -36,14 +32,14 @@ namespace datasource.repository
             return GetRepository().GetAllPersons();
         }
 
-        public PersonModel GetPerson(int id)
+        public Lst<PersonModel> GetPersons(Lst<int> ids)
         {
-             return GetRepository().GetPerson(id) ;
+             return GetRepository().GetPersons(ids);
         }
 
-        public PersonModel SavePerson(PersonModel person)
+        public Lst<PersonModel> SavePersons(Lst<PersonModel> persons)
         {
-             return GetRepository().SavePerson(person) ;
+             return GetRepository().SavePersons(persons);
         }
 
         public Lst<TeamModel> GetAllTeams()
@@ -51,14 +47,14 @@ namespace datasource.repository
              return GetRepository().GetAllTeams();
         }
 
-        public TeamModel GetTeam(int id)
+        public Lst<TeamModel> GetTeams(Lst<int> ids)
         {
-             return GetRepository().GetTeam(id);
+             return GetRepository().GetTeams(ids);
         }
 
-        public TeamModel SaveTeam(TeamModel team)
+        public Lst<TeamModel> SaveTeams(Lst<TeamModel> teams)
         {
-             return GetRepository().SaveTeam(team);
+             return GetRepository().SaveTeams(teams);
         }
 
         public Lst<PrizeModel> GetAllPrizes()
@@ -66,14 +62,14 @@ namespace datasource.repository
              return GetRepository().GetAllPrizes();
         }
 
-        public PrizeModel GetPrize(int id)
+        public Lst<PrizeModel> GetPrizes(Lst<int> ids)
         {
-             return GetRepository().GetPrize(id);
+             return GetRepository().GetPrizes(ids);
         }
 
-        public PrizeModel SavePrize(PrizeModel prize)
+        public Lst<PrizeModel> SavePrizes(Lst<PrizeModel> prizes)
         {
-             return GetRepository().SavePrize(prize);
+             return GetRepository().SavePrizes(prizes);
         }
 
         public Lst<MatchUpEntryModel> GetAllMatchUpEntries()
@@ -81,14 +77,14 @@ namespace datasource.repository
              return GetRepository().GetAllMatchUpEntries();
         }
 
-        public MatchUpEntryModel GetMatchUpEntry(int id)
+        public Lst<MatchUpEntryModel> GetMatchUpEntries(Lst<int> ids)
         {
-             return GetRepository().GetMatchUpEntry(id);
+             return GetRepository().GetMatchUpEntries(ids);
         }
 
-        public MatchUpEntryModel SaveMatchUpEntry(MatchUpEntryModel matchUpEntry)
+        public Lst<MatchUpEntryModel> SaveMatchUpEntries(int matchUpId, Lst<MatchUpEntryModel> matchUpEntries)
         {
-             return GetRepository().SaveMatchUpEntry(matchUpEntry);
+             return GetRepository().SaveMatchUpEntries(matchUpId, matchUpEntries);
         }
 
         public Lst<MatchUpModel> GetAllMatchUps()
@@ -96,14 +92,14 @@ namespace datasource.repository
              return GetRepository().GetAllMatchUps();
         }
 
-        public MatchUpModel GetMatchUp(int id)
+        public Lst<MatchUpModel> GetMatchUps(Lst<int> id)
         {
-             return GetRepository().GetMatchUp(id);
+             return GetRepository().GetMatchUps(id);
         }
 
-        public MatchUpModel SaveMatchUp(MatchUpModel matchUp)
+        public Lst<MatchUpModel> SaveMatchUps(int roundId, Lst<MatchUpModel> matchUps)
         {
-             return GetRepository().SaveMatchUp(matchUp);
+             return GetRepository().SaveMatchUps(roundId, matchUps);
         }
 
         public Lst<RoundModel> GetAllRounds()
@@ -111,14 +107,14 @@ namespace datasource.repository
              return GetRepository().GetAllRounds();
         }
 
-        public RoundModel GetRound(int id)
+        public Lst<RoundModel> GetRounds(Lst<int> ids)
         {
-             return GetRepository().GetRound(id);
+             return GetRepository().GetRounds(ids);
         }
 
-        public RoundModel SaveRound(RoundModel round)
+        public Lst<RoundModel> SaveRounds(int tournamentId, Lst<RoundModel> rounds)
         {
-             return GetRepository().SaveRound(round);
+             return GetRepository().SaveRounds(tournamentId, rounds);
         }
 
         public Lst<TournamentModel> GetAllTournaments()
@@ -126,18 +122,52 @@ namespace datasource.repository
              return GetRepository().GetAllTournaments();
         }
 
-        public TournamentModel GetTournament(int id)
+        public Lst<TournamentModel> GetTournaments(Lst<int> ids)
         {
-             return GetRepository().GetTournament(id);
+             return GetRepository().GetTournaments(ids);
         }
 
-        public TournamentModel SaveTournament(TournamentModel tournament)
+        public Lst<TournamentModel> SaveTournaments(Lst<TournamentModel> tournaments)
         {
-             return GetRepository().SaveTournament(tournament);
+             return GetRepository().SaveTournaments(tournaments);
         }
 
-        public DataRepository(ILocalRepository localRepository, IRemoteRepositry remoteRepositry, ConnectionType connectionType) {
-           this.localRepository = localRepository;
+        public Lst<PersonModel> GetAllPersonInTeam(int teamId)
+        {
+            return GetRepository().GetAllPersonInTeam(teamId);
+        }
+
+        public Lst<TeamModel> GetAllTeamEntredInTournament(int tournamentId)
+        {
+            return GetRepository().GetAllTeamEntredInTournament(tournamentId);
+        }
+
+        public Lst<PrizeModel> GetAllPrizeInTournament(int tournamentId)
+        {
+            return GetRepository().GetAllPrizeInTournament(tournamentId);
+        }
+
+        public Lst<PrizeModel> AssociatePrizeWithTournament(int tournamentId, Lst<int> prizeIds)
+        {
+            return GetRepository().AssociatePrizeWithTournament(tournamentId, prizeIds);
+        }
+
+        public Lst<MatchUpEntryModel> GetMatchUpEntriesInMatchUp(int matchupId)
+        {
+            return GetRepository().GetMatchUpEntriesInMatchUp(matchupId);
+        }
+
+        public Lst<MatchUpModel> GetMatchUpsInRound(int roundId)
+        {
+            return GetRepository().GetMatchUpsInRound(roundId);
+        }
+
+        public Lst<RoundModel> GetRoundsInTournamnet(int tournamentId)
+        {
+            return GetRepository().GetRoundsInTournamnet(tournamentId);
+        }
+
+        public DataRepository(IRemoteRepositry remoteRepositry, ConnectionType connectionType) {
             this.remoteRepositry = remoteRepositry;
             this.connectionType = connectionType;
         }
