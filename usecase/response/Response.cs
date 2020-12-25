@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace usecase.common
+namespace usecase.response
 {
     class Response<T> : BaseResponse<T> where T : BaseModel
     {

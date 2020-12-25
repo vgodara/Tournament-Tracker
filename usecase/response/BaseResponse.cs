@@ -5,7 +5,7 @@ using LanguageExt;
 using static LanguageExt.Prelude;
 using model;
 
-namespace usecase.common
+namespace usecase.response
 {
     class BaseResponse<T>  {
 

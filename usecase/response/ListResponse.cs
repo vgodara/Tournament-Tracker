@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace usecase.common
+namespace usecase.response
 {
     class ListResponse<T> : BaseResponse<Lst<T>> where T : BaseModel
     {

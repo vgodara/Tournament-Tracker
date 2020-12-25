@@ -1,9 +1,9 @@
-﻿using model;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using usecase.response;
 
-namespace usecase.common
+namespace usecase.baseUseCase
 {
     abstract class BaseUseCase<Model, Request>
     {
