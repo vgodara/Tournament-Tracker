@@ -18,12 +18,12 @@ namespace datasource.repository
             this.connectionType = connectionType;
         }
 
-        public Lst<Model> AssociateModelsWithParent(Lst<int> ids, int parentId = int.MinValue)
+        public Lst<Model> AssociateModelsWithParent(Lst<int> ids, int parentId)
         {
             return GetRepository().AssociateModelsWithParent(ids, parentId);
         }
 
-        public Model AssociateModelWithParent(int id, int parentId = int.MinValue)
+        public Model AssociateModelWithParent(int id, int parentId)
         {
             return GetRepository().AssociateModelWithParent(id, parentId);
         }
