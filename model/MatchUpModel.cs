@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LanguageExt;
+using System.Collections.Generic;
 
 namespace model
 {
@@ -7,13 +8,13 @@ namespace model
         /// <summary>
         /// Represents List of match-up entry for this match up 
         /// </summary>
-        public List<MatchUpEntryModel> MatchUpEntries { get; }
+        public Lst<MatchUpEntryModel> MatchUpEntries { get; }
         /// <summary>
         /// Represents Winner Team for this match up
         /// </summary>
         public TeamModel WinnerTeam { get; }
 
-        public MatchUpModel ( List<MatchUpEntryModel> matchUpEntries,
+        public MatchUpModel ( Lst<MatchUpEntryModel> matchUpEntries,
                              TeamModel winnerTeam ) : base()
         {
             MatchUpEntries = matchUpEntries;
@@ -21,7 +22,7 @@ namespace model
         }
 
         public MatchUpModel ( int id,
-                             List<MatchUpEntryModel> matchUpEntries,
+                             Lst<MatchUpEntryModel> matchUpEntries,
                              TeamModel winnerTeam ) : base(id)
         {
             MatchUpEntries = matchUpEntries;

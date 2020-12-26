@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LanguageExt;
+using System.Collections.Generic;
 
 namespace model
 {
@@ -15,21 +16,21 @@ namespace model
         /// <summary>
         /// List of Teams participating in this particular tournament
         /// </summary>
-        public List<TeamModel> EnteredTeams { get; }
+        public Lst<TeamModel> EnteredTeams { get; }
         /// <summary>
         /// Total amount of prize for this particular tournament
         /// </summary>
-        public List<PrizeModel> Prizes { get; }
+        public Lst<PrizeModel> Prizes { get; }
         /// <summary>
         /// List of rounds to held for this particular tournament
         /// </summary>
-        public List<RoundModel> Rounds { get; }
+        public Lst<RoundModel> Rounds { get; }
 
         public TournamentModel ( string tournamentName,
                                 decimal entryFee,
-                                List<TeamModel> enteredTeams,
-                                List<PrizeModel> prizes,
-                                List<RoundModel> rounds ) : base ()
+                                Lst<TeamModel> enteredTeams,
+                                Lst<PrizeModel> prizes,
+                                Lst<RoundModel> rounds ) : base ()
         {
 
             TournamentName = tournamentName;
@@ -41,9 +42,9 @@ namespace model
         public TournamentModel ( int id,
                                 string tournamentName,
                                 decimal entryFee,
-                                List<TeamModel> enteredTeams,
-                                List<PrizeModel> prizes,
-                                List<RoundModel> rounds ) : base (id)
+                                Lst<TeamModel> enteredTeams,
+                                Lst<PrizeModel> prizes,
+                                Lst<RoundModel> rounds ) : base (id)
         {
 
             TournamentName = tournamentName;

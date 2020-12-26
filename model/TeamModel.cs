@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LanguageExt;
+using System.Collections.Generic;
 
 namespace model
 {
@@ -7,13 +8,13 @@ namespace model
         /// <summary>
         /// Represents the list of people for this particular team
         /// </summary>
-        public List<PersonModel> TeamMembers { get; }
+        public Lst<PersonModel> TeamMembers { get; }
         /// <summary>
         /// Represents the official name of the team 
         /// </summary>
         public string TeamName { get; }
 
-        public TeamModel ( List<PersonModel> teamMember,
+        public TeamModel ( Lst<PersonModel> teamMember,
                           string teamName ) : base()
         {
 
@@ -22,7 +23,7 @@ namespace model
         }
 
         public TeamModel ( int id,
-                          List<PersonModel> teamMember,
+                          Lst<PersonModel> teamMember,
                           string teamName ) : base (id)
         {
 

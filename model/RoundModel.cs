@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LanguageExt;
+using System.Collections.Generic;
 
 namespace model
 {
@@ -11,10 +12,10 @@ namespace model
         /// <summary>
         /// List of match held for this round
         /// </summary>
-        public List<MatchUpModel> MatchUps { get; }
+        public Lst<MatchUpModel> MatchUps { get; }
 
         public RoundModel ( int roundNumber,
-                           List<MatchUpModel> matchUps ) : base ()
+                           Lst<MatchUpModel> matchUps ) : base ()
         {
             RoundNumber = roundNumber;
             MatchUps = matchUps;
@@ -22,7 +23,7 @@ namespace model
 
         public RoundModel ( int id,
                            int roundNumber,
-                           List<MatchUpModel> matchUps ) : base (id)
+                           Lst<MatchUpModel> matchUps ) : base (id)
         {
             RoundNumber = roundNumber;
             MatchUps = matchUps;
