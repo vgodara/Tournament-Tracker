@@ -12,8 +12,8 @@ namespace usecase
         public Lst<Model> GetAlllModels();
         public Model SaveModel(Model model, int parentId = int.MinValue);
         public Lst<Model> SaveAllModel(Lst<Model> models, int parentId = int.MinValue);
-        public Model AssociateModelWithParent(int id, int parentId = int.MinValue);
-        public Lst<Model> AssociateModelsWithParent(Lst<int> ids, int parentId = int.MinValue);
+        public Model AssociateModelWithParent(int id, int parentId);
+        public Lst<Model> AssociateModelsWithParent(Lst<int> ids, int parentId);
 
     }
 }
